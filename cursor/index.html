@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            background: #000;
+
+        }
+
+        .cursor {
+            width: 20px;
+            transition: width 0.1s linear;
+            height: 20px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            position: fixed;
+            z-index: 9;
+            overflow: hidden;
+
+
+            &.enter {
+                transition: width 0.3s linear;
+                width: 75px;
+                height: 20px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                padding-left: 6px;
+                padding-right: 6px;
+                border-radius: 12px;
+            }
+
+            .text-wrapper {
+                position: relative;
+                height: 8.5px;
+                white-space: nowrap;
+                z-index: 9;
+
+                .text {
+                    position: absolute;
+                    left: max(calc(60px * 3), 100%);
+                    animation-name: scrollLeft;
+                    animation-duration: 4s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    font-size: 16px;
+                    width: 40px;
+                    height: fit-content;
+                    animation-delay: calc(4s / 3 * (3 - var(--i)) * -1);
+                    z-index: 9;
+                }
+            }
+        }
+
+        .main {
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .image {
+                height: 50vh;
+                width: 40vw;
+                position: relative;
+                cursor: pointer;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .overlay {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: transparent;
+                    z-index: 10;
+                }
+            }
+        }
+
+        @keyframes scrollLeft {
+            to {
+                left: -75px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor">
+        <div class="text-wrapper">
+            <div class="text" style="--i:1"></div>
+            <div class="text" style="--i:2"></div>
+            <div class="text" style="--i:3"></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="image">
+            <div class="overlay"></div>
+            <img
+                src="https://images.unsplash.com/photo-1733006955704-3f96d25d8792?q=80&w=1977&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        const image = document.querySelector('.image');
+        const cursor = document.querySelector('.cursor');
+        const text = document.querySelectorAll('.text');
+
+
+
+        image.addEventListener('mouseenter', (event) => {
+            text.forEach((element) => {
+
+                element.innerHTML = `View More`;
+            })
+            cursor.classList.add('enter')
+
+
+            gsap.to(cursor, {
+                scale: 1,
+                duration: 0.3,
+            })
+
+
+        });
+
+        image.addEventListener('mouseleave', (event) => {
+            text.forEach((element) => {
+                element.innerHTML = '';
+            })
+            console.log("mouse Leave");
+            cursor.classList.remove('enter')
+            
+            gsap.to(cursor, {
+                scale: 1,
+                duration: 0.3,
+            })
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            gsap.to(cursor, {
+                x: event.x,
+                y: event.y,
+                duration: 1,
+                ease: "power4.out",
+            })
+        });
+    </script>
+</body>
+
+</html>
