@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text From Bottom</title>
+
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        h1 {
+            color: aliceblue;
+            font-size: 100px;
+            letter-spacing: 10px;
+            overflow: hidden;
+
+            span {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        Animation
+    </h1>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        const h1 = document.querySelector('h1');
+        
+        const splittedText = h1.textContent.trim().split('');
+
+        let clutter = "";
+
+        const halfText = splittedText.length / 2;
+
+        splittedText.forEach((element, index) => {
+            if(index < halfText) {
+                clutter += `<span class="a">${element}</span>`;
+            } else {
+                clutter += `<span class="b">${element}</span>`;
+            }
+        });
+
+        h1.innerHTML = clutter;
+
+        gsap.from('h1 .a', {
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            delay: 0.5,
+            stagger: 0.15,
+        });
+        gsap.from('h1 .b', {
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            delay: 0.5,
+            stagger: -0.15,
+        });
+
+    </script>
+</body>
+
+</html>

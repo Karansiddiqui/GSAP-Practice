@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font—family: gilroy;
+        }
+
+      
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: #000;
+        }
+
+        #string {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            h1 {
+                color: aliceblue;
+                text-align: center;
+            }
+
+
+            svg {
+                position: absolute;
+                width: 80%;
+                top: 150px;
+
+                path {
+                    stroke-dasharray: 1420;
+                    stroke-dashoffset: 1420;
+                    stroke: #ffffff;
+                    stroke-width: 2;
+                    animation: drawLine 4s cubic-bezier(0.5, 0.5, 0, 1) forwards;
+                }
+
+            }
+            
+        }
+        @keyframes drawLine {
+           0% {
+            opacity: 0;
+           }
+           6% {
+            opacity: 0;
+           }
+           7%{
+            opacity: 1;
+ 
+           }
+            100% {
+                opacity: 1;
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="string">
+        <h1>
+            Welcome to SVG Guitar!
+            <br>
+            Move your mouse over the string to change the guitar's position.
+        </h1>
+        <svg viewBox="0 0 1536 500" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 250 Q 800 250 1526 250"  fill="transparent" />
+        </svg>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let path = `M 10 250 Q 800 250 1526 250`;
+        let final_path = `M 10 250 Q 800 250 1526 250`;
+
+        let string = document.querySelector('svg');
+        let pathElement = document.querySelector('path');
+
+        string.addEventListener('mousemove', (event) => {
+            const rect = string.getBoundingClientRect();
+
+
+            const relativeX = (event.clientX - rect.left) * (1536 / rect.width);
+            const relativeY = (event.clientY - rect.top) * (500 / rect.height);
+
+            path = `M 10 250 Q ${relativeX} ${relativeY} 1526 250`;
+
+            pathElement.setAttribute("d", path);
+
+            gsap.to('svg path', {
+                attr: { d: path },
+                duration: 0.3,
+                ease: "power4.out",
+            });
+        });
+
+        string.addEventListener('mouseleave', (dets) => {
+            pathElement.setAttribute("d", final_path);
+
+            gsap.to('svg path', {
+                attr: {
+                    d: final_path
+                },
+                duration: 1.5,
+                ease: "elastic.out(1.2,0.2)",
+            })
+        })
+    </script>
+</body>
+
+</html>

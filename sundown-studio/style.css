@@ -1,0 +1,77 @@
+@font-face {
+  font-family: china;
+  src: url(./NeueHaasDisplay-Mediu.ttf);
+}
+
+@font-face {
+  font-family: japan;
+  src: url(./NeueHaasDisplay-Roman.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #efeae3;
+}
+
+.padding {
+  padding: 2.5vw 0;
+}
+#page1 {
+  padding: 0 2vw;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .buttons {
+      display: flex;
+      align-items: center;
+
+      h4 {
+        font-family: japan;
+        border: 1px solid #917e78dc;
+        margin: 0 7px;
+        border-radius: 50px;
+        padding: 13px 21px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: black;
+          position: relative;
+          z-index: 9;
+        }
+
+        &:hover {
+          a {
+            color: #efeae3;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: black;
+          left: 0;
+          bottom: -100%;
+          border-radius: 50%;
+          transition: all 0.4s ease;
+        }
+
+        &:hover::after {
+          bottom: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

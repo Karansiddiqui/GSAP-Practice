@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using css infinite scroll on the mouse scroll</title>
+
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            background: #000;
+
+        }
+
+        .page1,
+        .page2,
+        .page3 {
+            height: 100vh;
+            width: 100%;
+            background: #000;
+        }
+
+        .page2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                width: 90px;
+                height: auto;
+            }
+
+            .wrapper {
+                background: #d9ff06;
+                padding: 45px 0;
+                display: flex;
+                overflow: hidden;
+                position: relative;
+                white-space: nowrap;
+                height: 83.53px;
+
+                .content {
+                    position: absolute;
+                    flex-shrink: 0;
+                    display: flex;
+                    width: fit-content;
+                    font-size: 4.5rem;
+                    
+                    
+                    animation-duration: 25s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    animation-delay: calc(25s / 3 * (3 - var(--i)) * -1);
+                    &.left {
+                        left: max(calc(700px * 3), 100%);
+                        animation-name: scrollLeft;
+
+                        .arrow {
+                            rotate: 0deg;
+                        }
+                    }
+                    &.right {
+                        right: max(calc(700px * 3), 100%);
+                        animation-name: scrollRight;
+                        transition: rotate 0.3s linear;
+                        
+                        .arrow {
+                            rotate: 180deg;
+                        }
+                    }
+                    .arrow {
+                        width: 100px;
+                        height: fit-content;
+                        display: flex;
+                        margin: 0px 70px;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 100%;
+                            rotate: 180deg;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes scrollLeft {
+            to {
+                left: -1079.9px;
+            }
+        }
+        @keyframes scrollRight {
+            to {
+                right: -1079.9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page1"></div>
+
+    <div class="page2">
+        <div class="wrapper">
+            <div class="content" style="--i:1">
+                THRIVE BEYOND LIMITS
+                <div class="arrow">
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" />
+                </div>
+            </div>
+
+            <div class="content" style="--i:2">
+                THRIVE BEYOND LIMITS
+                <div class="arrow">
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" />
+                </div>
+            </div>
+
+            <div class="content" style="--i:3">
+                THRIVE BEYOND LIMITS
+                <div class="arrow">
+                    <img src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg" />
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="page3"></div>
+
+
+
+
+   
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+        const arrow = document.querySelector('.arrow');
+        const content = document.querySelectorAll('.content');
+
+        function moveleft() {
+            content.forEach((element, index) => {
+                element.classList.remove('right')
+                element.classList.add('left')
+            });
+        }
+
+
+        function moveright() {
+            content.forEach((element, index) => {
+                element.classList.remove('left')
+                element.classList.add('right')
+            });
+        }
+
+        moveleft();
+        window.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                moveleft();
+            } else {
+                moveright();
+            }
+        })
+
+    </script>
+</body>
+
+</html>
