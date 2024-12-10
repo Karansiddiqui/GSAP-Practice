@@ -1,222 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ochi</title>
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <nav
-        class="fixed container-padding-x container-padding-y w-full  flex justify-between items-center font-['Neue_Montreal']">
-        <a href="/" class="logo flex-1">
-            <svg width="72" height="30" viewBox="0 0 72 30" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="text-white">
-                <path
-                    d="M9.8393 10.2032C4.22951 10.3257 -0.0459221 14.7356 0.000372391 20.2752C0.0412204 25.3548 4.57808 30.3608 10.6862 29.9226C15.5145 29.5768 19.9015 25.4119 19.8525 20.0057C19.8035 14.5995 15.1904 10.0916 9.8393 10.2032ZM9.89649 25.7005C6.87101 25.7005 4.39834 23.1144 4.40924 19.9839C4.39525 19.2507 4.52792 18.522 4.79947 17.8407C5.07102 17.1594 5.47597 16.5392 5.99056 16.0164C6.50515 15.4937 7.11902 15.0789 7.79613 14.7966C8.47324 14.5142 9.19995 14.3698 9.93362 14.372C10.6673 14.3742 11.3931 14.5228 12.0686 14.8092C12.744 15.0956 13.3554 15.514 13.8668 16.0398C14.3783 16.5656 14.7796 17.1882 15.0471 17.8711C15.3146 18.554 15.4429 19.2834 15.4246 20.0166C15.4409 23.1008 12.9111 25.7059 9.88832 25.7005H9.89649Z"
-                    fill="currentColor"></path>
-                <path d="M62.8086 29.4855H67.1222V10.6372H62.8086V29.4855Z" fill="currentColor"></path>
-                <path
-                    d="M67.6816 0.172852V6.13439H71.5322C71.6738 6.13439 71.8046 6.13439 72.0006 6.11534V0.172852H67.6816Z"
-                    fill="currentColor"></path>
-                <path
-                    d="M31.5648 25.7016C28.5393 25.7016 26.0667 23.1156 26.0776 19.9851C26.0936 18.5291 26.6764 17.1366 27.7023 16.1029C28.7282 15.0692 30.1166 14.4757 31.573 14.4482C32.4198 14.4541 33.2537 14.6557 34.0095 15.0373C34.7654 15.4188 35.4227 15.97 35.9301 16.6477L40.0667 15.0144C38.2884 12.0853 35.0669 10.1145 31.4995 10.1989C25.8897 10.3214 21.6142 14.7313 21.6605 20.2709C21.7014 25.3505 26.2382 30.3565 32.3464 29.9183C33.9908 29.7803 35.5761 29.2408 36.9631 28.347C38.3501 27.4532 39.4963 26.2326 40.3009 24.7924L36.2542 22.9931C35.7705 23.8086 35.0851 24.486 34.2638 24.9604C33.4426 25.4347 32.5132 25.69 31.5648 25.7016Z"
-                    fill="currentColor"></path>
-                <path
-                    d="M52.4097 10.1387C51.2512 10.1119 50.1066 10.3947 49.0941 10.958C48.0816 11.5212 47.2379 12.3445 46.6501 13.3427V0.172852H42.293V29.4688H46.6501C46.6501 29.1721 46.6501 18.7816 46.6501 18.7816C46.6501 15.6946 47.8619 13.4352 50.8084 13.4352C54.6046 13.4352 54.6209 17.4178 54.6209 19.6962C54.6209 22.9165 54.6209 25.5189 54.6209 28.7393V29.4987H59.0271C59.0271 29.3708 59.0488 29.2728 59.0488 29.1721C59.0488 25.5108 59.0951 21.8522 59.0325 18.1909C58.9916 15.6538 58.5015 10.1387 52.4097 10.1387Z"
-                    fill="currentColor"></path>
-            </svg>
+      class="fixed container-padding-x container-padding-y w-full flex justify-between items-center font-['Neue_Montreal']"
+    >
+      <a href="/" class="logo flex-1">
+        <svg
+          width="72"
+          height="30"
+          viewBox="0 0 72 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="text-white"
+        >
+          <path
+            d="M9.8393 10.2032C4.22951 10.3257 -0.0459221 14.7356 0.000372391 20.2752C0.0412204 25.3548 4.57808 30.3608 10.6862 29.9226C15.5145 29.5768 19.9015 25.4119 19.8525 20.0057C19.8035 14.5995 15.1904 10.0916 9.8393 10.2032ZM9.89649 25.7005C6.87101 25.7005 4.39834 23.1144 4.40924 19.9839C4.39525 19.2507 4.52792 18.522 4.79947 17.8407C5.07102 17.1594 5.47597 16.5392 5.99056 16.0164C6.50515 15.4937 7.11902 15.0789 7.79613 14.7966C8.47324 14.5142 9.19995 14.3698 9.93362 14.372C10.6673 14.3742 11.3931 14.5228 12.0686 14.8092C12.744 15.0956 13.3554 15.514 13.8668 16.0398C14.3783 16.5656 14.7796 17.1882 15.0471 17.8711C15.3146 18.554 15.4429 19.2834 15.4246 20.0166C15.4409 23.1008 12.9111 25.7059 9.88832 25.7005H9.89649Z"
+            fill="currentColor"
+          ></path>
+          <path
+            d="M62.8086 29.4855H67.1222V10.6372H62.8086V29.4855Z"
+            fill="currentColor"
+          ></path>
+          <path
+            d="M67.6816 0.172852V6.13439H71.5322C71.6738 6.13439 71.8046 6.13439 72.0006 6.11534V0.172852H67.6816Z"
+            fill="currentColor"
+          ></path>
+          <path
+            d="M31.5648 25.7016C28.5393 25.7016 26.0667 23.1156 26.0776 19.9851C26.0936 18.5291 26.6764 17.1366 27.7023 16.1029C28.7282 15.0692 30.1166 14.4757 31.573 14.4482C32.4198 14.4541 33.2537 14.6557 34.0095 15.0373C34.7654 15.4188 35.4227 15.97 35.9301 16.6477L40.0667 15.0144C38.2884 12.0853 35.0669 10.1145 31.4995 10.1989C25.8897 10.3214 21.6142 14.7313 21.6605 20.2709C21.7014 25.3505 26.2382 30.3565 32.3464 29.9183C33.9908 29.7803 35.5761 29.2408 36.9631 28.347C38.3501 27.4532 39.4963 26.2326 40.3009 24.7924L36.2542 22.9931C35.7705 23.8086 35.0851 24.486 34.2638 24.9604C33.4426 25.4347 32.5132 25.69 31.5648 25.7016Z"
+            fill="currentColor"
+          ></path>
+          <path
+            d="M52.4097 10.1387C51.2512 10.1119 50.1066 10.3947 49.0941 10.958C48.0816 11.5212 47.2379 12.3445 46.6501 13.3427V0.172852H42.293V29.4688H46.6501C46.6501 29.1721 46.6501 18.7816 46.6501 18.7816C46.6501 15.6946 47.8619 13.4352 50.8084 13.4352C54.6046 13.4352 54.6209 17.4178 54.6209 19.6962C54.6209 22.9165 54.6209 25.5189 54.6209 28.7393V29.4987H59.0271C59.0271 29.3708 59.0488 29.2728 59.0488 29.1721C59.0488 25.5108 59.0951 21.8522 59.0325 18.1909C58.9916 15.6538 58.5015 10.1387 52.4097 10.1387Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </a>
+
+      <div class="flex-1 flex gap-10">
+        <a href="#" class="text-xl font-normal text-gray-300 capitalize">
+          Services
         </a>
-
-        <div class="flex-1 flex gap-10">
-
-            <a href="#" class="text-xl font-normal text-gray-300 capitalize">
-                Services
-            </a>
-            <a href="#" class="text-xl font-normal text-gray-300 capitalize">
-                Our work
-            </a>
-            <a href="#" class="text-xl font-normal text-gray-300 capitalize">
-                About us
-            </a>
-            <a href="#" class="text-xl font-normal text-gray-300 capitalize">
-                Insights
-            </a>
-            <a href="#" class="text-xl font-normal text-gray-300 capitalize ml-auto">
-                Contact us
-            </a>
-        </div>
+        <a href="#" class="text-xl font-normal text-gray-300 capitalize">
+          Our work
+        </a>
+        <a href="#" class="text-xl font-normal text-gray-300 capitalize">
+          About us
+        </a>
+        <a href="#" class="text-xl font-normal text-gray-300 capitalize">
+          Insights
+        </a>
+        <a
+          href="#"
+          class="text-xl font-normal text-gray-300 capitalize ml-auto"
+        >
+          Contact us
+        </a>
+      </div>
     </nav>
 
-    <section class="w-full h-screen bg-zinc-900 pt-1 font-['Neue_Montreal']">
+    <div class="bg-zinc-900">
+      <section class="w-full h-screen bg-zinc-900 pt-1 font-['Neue_Montreal']">
         <div
-            class="container-padding-x textstructure pt-[12rem] pb-[9rem] font-['Founders_Grotesk'] text-[9vw] leading-[0.8]">
-
-            <div class="masker" key={index}>
-                <div class="w-fit flex items-center gap-4">
-                    <h1 class="uppercase">we create</h1>
-                </div>
+          class="container-padding-x textstructure pt-[12rem] pb-[9rem] font-['Founders_Grotesk'] text-[9vw] leading-[0.8]"
+        >
+          <div class="masker" key="{index}">
+            <div class="w-fit flex items-center gap-4">
+              <h1 class="uppercase">we create</h1>
             </div>
-            <div class="masker" key={index}>
-                <div class="w-fit flex items-center gap-4">
+          </div>
+          <div class="masker" key="{index}">
+            <div class="w-fit flex items-center gap-4">
+              <div
+                class="w-[1em] h-[0.65em] bg-[url('https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg')] bg-cover bg-center relative top-[9px] rounded-[0.6rem]"
+              ></div>
 
-                    <div
-                        class=" w-[1em] h-[0.65em] bg-[url('https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg')] bg-cover bg-center relative top-[9px] rounded-[0.6rem]">
-                    </div>
-
-                    <h1 class="uppercase">eye-opening</h1>
-                </div>
+              <h1 class="uppercase">eye-opening</h1>
             </div>
-            <div class="masker" key={index}>
-                <div class="w-fit flex items-center gap-4">
-
-
-                    <h1 class="uppercase">presentations</h1>
-                </div>
+          </div>
+          <div class="masker" key="{index}">
+            <div class="w-fit flex items-center gap-4">
+              <h1 class="uppercase">presentations</h1>
             </div>
+          </div>
         </div>
 
         <div
-            class="grid gap-y-30 md:grid-cols-12 container-padding-x border-t-[1px] border-zinc-700 w-full container-padding-y text-zinc-300 text-xl">
-            <div class="md:col-span-4 lg:col-span-6  ">
-                <p>For public and private companies</p>
+          class="grid gap-y-30 md:grid-cols-12 container-padding-x border-t-[1px] border-zinc-700 w-full container-padding-y text-zinc-300 text-xl"
+        >
+          <div class="md:col-span-4 lg:col-span-6">
+            <p>For public and private companies</p>
+          </div>
+          <div class="md:col-span-4 lg:col-span-3">
+            <div class="max-w-275">
+              <p>From the first pitch to IPO</p>
             </div>
-            <div class="md:col-span-4 lg:col-span-3 ">
-                <div class=" max-w-275">
-                    <p>From the first pitch to IPO</p>
-                </div>
-            </div>
-            <div class="md:col-span-4 lg:col-span-3 md:place-items-end ">
-                <a href="#" class="flex items-center gap-2">
-                    <span class="uppercase border-[2px] border-zinc-300 rounded-full px-4 py-1">
-                        Start the project
-                    </span>
-                    <span class="border-[2px] border-zinc-300 rounded-full p-3">
-                        <FaArrowUp class="rotate-45" />
-                    </span>
-                </a>
-            </div>
+          </div>
+          <div class="md:col-span-4 lg:col-span-3 md:place-items-end">
+            <a href="#" class="flex items-center gap-2">
+              <span
+                class="uppercase border-[2px] border-zinc-300 rounded-full px-4 py-1"
+              >
+                Start the project
+              </span>
+              <span class="border-[2px] border-zinc-300 rounded-full p-3">
+                <FaArrowUp class="rotate-45" />
+              </span>
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section
-        class="overflow-x-hidden -mt-5 w-full bg-[#004d43] text-[29vw] font-extrabold font-['Founders_Grotesk'] uppercase pt-[8vw] pb-[10vw] whitespace-nowrap  tracking-[-.015em] rounded-t-3xl">
+      <section
+        class="overflow-x-hidden w-full bg-[#004d43] text-[29vw] font-extrabold font-['Founders_Grotesk'] uppercase pt-[8vw] pb-[10vw] whitespace-nowrap tracking-[-.015em] rounded-t-3xl"
+      >
         <div
-            class="relative w-fit flex items-center justify-center leading-[0.6]  before:content-[''] before:absolute before:w-full before:h-[1px] before:bg-white before:opacity-[0.3] before:top-0 before:left-0 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:opacity-[0.3] after:bottom-[-3.3vw] after:left-0">
-            <div class=" animate-marquee inline-flex">
-                <h1>We are Ochi</h1>
-                <div class="mr-[7vw]"></div>
-            </div>
-            <div class=" animate-marquee inline-flex">
-                <h1>We are Ochi</h1>
-                <div class="mr-[7vw]"></div>
-            </div>
-            <div class=" animate-marquee inline-flex">
-                <h1>We are Ochi</h1>
-                <div class="mr-[7vw]"></div>
-            </div>
+          class="relative w-fit flex items-center justify-center leading-[0.6] before:content-[''] before:absolute before:w-full before:h-[1px] before:bg-white before:opacity-[0.3] before:top-0 before:left-0 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:opacity-[0.3] after:bottom-[-3.3vw] after:left-0"
+        >
+          <div class="animate-marquee inline-flex">
+            <h1>We are Ochi</h1>
+            <div class="mr-[7vw]"></div>
+          </div>
+          <div class="animate-marquee inline-flex">
+            <h1>We are Ochi</h1>
+            <div class="mr-[7vw]"></div>
+          </div>
+          <div class="animate-marquee inline-flex">
+            <h1>We are Ochi</h1>
+            <div class="mr-[7vw]"></div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class=" w-full bg-[#cdea68] rounded-t-3xl text-[#212121] text-[1.1vw]">
-        <div class="container-padding-x relative  max-w-[88vw]  pt-[7vw] pb-[4vw]">
-            <h1 class="text-[3.4vw] leading-[1] hyphens-auto">
-                Ochi is a strategic presentation agency for forward-thinking
-                businesses that need to <u>raise funds</u> , <u>sell prod&shy;ucts</u> ,
-                <u>ex&shy;plain com&shy;plex ideas</u>, and <u>hire great peo&shy;ple</u>.
-            </h1>
-        </div>
-
+      <section
+        class="w-full bg-[#cdea68] rounded-t-3xl text-[#212121] text-[1.1vw]"
+      >
         <div
-            class="container-padding-x container-padding-y  flex justify-between relative after:content-[''] after:w-full after:h-[1px] after:bg-[rgba(33,32,33,0.36)] after:absolute after:top-0 after:left-0 mb-[4vw]">
-            <div class=" flex-1">
-                <p>What you can expect:</p>
-            </div>
-            <div class="flex-1  flex gap-[10vw]">
-                <p class="flex-[0.6]">
-                    We create tailored presentations to help you persuade your
-                    colleagues, clients, or investors. Whether it's live or digital,
-                    delivered for one or a hundred people. <br /> <br />
-                    We believe the mix of strategy and design (with a bit of coffee) is
-                    what makes your message clear, convincing, and captivating.
-                </p>
-
-                <div class="flex gap-[1vw] flex-col flex-[0.4] text-left items-sart self-end leading-[0.5]">
-                    <h1 class="mb-[1vw]">S:</h1>
-                    <a href="#"
-                        class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0">
-                        Instagram
-                    </a>
-                    <a href="#"
-                        class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0">
-                        LinkedIn
-                    </a>
-                    <a href="#"
-                        class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0">
-                        Behance
-                    </a>
-                    <a href="#"
-                        class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0">
-                        Facebook
-                    </a>
-                </div>
-            </div>
+          class="container-padding-x relative max-w-[88vw] pt-[7vw] pb-[4vw]"
+        >
+          <h1 class="text-[3.4vw] leading-[1] hyphens-auto">
+            Ochi is a strategic presentation agency for forward-thinking
+            businesses that need to <u>raise funds</u> ,
+            <u>sell prod&shy;ucts</u> , <u>ex&shy;plain com&shy;plex ideas</u>,
+            and <u>hire great peo&shy;ple</u>.
+          </h1>
         </div>
 
         <div
-            class="container-padding-x container-padding-y font-['Neue_Montreal'] flex justify-between relative after:content-[''] after:w-full after:h-[1px] after:bg-[rgba(33,32,33,0.36)] after:absolute after:top-0 after:left-0">
-            <div class="flex-1 space-y-4">
-                <h1 class="text-[3.5vw] text-black">Our approach:</h1>
-                <button class="bg-[#212121] text-white px-6 py-[7px] rounded-full flex items-center gap-8">
-                    Read More
-                    <div class="-mr-4  bg-white text-black px-4 py-3 rounded-full">
-                        <i class="ri-arrow-right-up-line "></i>
-                    </div>
-                </button>
-            </div>
+          class="container-padding-x container-padding-y flex justify-between relative after:content-[''] after:w-full after:h-[1px] after:bg-[rgba(33,32,33,0.36)] after:absolute after:top-0 after:left-0 mb-[4vw]"
+        >
+          <div class="flex-1">
+            <p>What you can expect:</p>
+          </div>
+          <div class="flex-1 flex gap-[10vw]">
+            <p class="flex-[0.6]">
+              We create tailored presentations to help you persuade your
+              colleagues, clients, or investors. Whether it's live or digital,
+              delivered for one or a hundred people. <br />
+              <br />
+              We believe the mix of strategy and design (with a bit of coffee)
+              is what makes your message clear, convincing, and captivating.
+            </p>
 
-            <div class="flex-1 ">
-                <img src="https://ochi.design/wp-content/uploads/2022/05/Homepage-Photo-663x469.jpg" alt="image"
-                    class="w-full h-full object-cover rounded-3xl" />
+            <div
+              class="flex gap-[1vw] flex-col flex-[0.4] text-left items-sart self-end leading-[0.5]"
+            >
+              <h1 class="mb-[1vw]">S:</h1>
+              <a
+                href="#"
+                class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0"
+              >
+                Instagram
+              </a>
+              <a
+                href="#"
+                class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0"
+              >
+                Behance
+              </a>
+              <a
+                href="#"
+                class="w-fit relative after:content-[''] after:w-full after:h-[0.02vw] after:bg-black after:absolute after:bottom-[-0.3vw] after:left-0"
+              >
+                Facebook
+              </a>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Eyes -->
-    <section class="h-screen ">
-        <div class="flex gap-14 items-center justify-center bg-cover bg-center w-full h-full bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-1440x921.jpg')]">
-            <div class="w-[14vw] h-[14vw] ">
-                <div class=" relative w-[14vw] h-[14vw] bg-zinc-100 rounded-full">
-                    <div class="eyeBall absolute  w-[8.1vw] h-[8.1vw] bg-zinc-900 rounded-full">
-                        <!-- <div class="absolute top-[50%]  w-full line"> -->
-                            <div class="w-[1.1vw] h-[1.1vw] absolute top-[50%] left-[50%] bg-zinc-100 rounded-full">
+        <div
+          class="container-padding-x container-padding-y font-['Neue_Montreal'] flex justify-between relative after:content-[''] after:w-full after:h-[1px] after:bg-[rgba(33,32,33,0.36)] after:absolute after:top-0 after:left-0"
+        >
+          <div class="flex-1 space-y-4">
+            <h1 class="text-[3.5vw] text-black">Our approach:</h1>
+            <button
+              class="bg-[#212121] text-white px-6 py-[7px] rounded-full flex items-center gap-8"
+            >
+              Read More
+              <div class="-mr-4 bg-white text-black px-4 py-3 rounded-full">
+                <i class="ri-arrow-right-up-line"></i>
+              </div>
+            </button>
+          </div>
 
-                            </div>
-                        <!-- </div> -->
-                    </div>
-                </div>
-            </div>
-            <div class="w-[14vw] h-[14vw] ">
-                <div class=" relative  w-[14vw] h-[14vw] bg-zinc-100 rounded-full">
-                    <div class="eyeBall absolute  w-[8.1vw] h-[8.1vw] bg-zinc-900 rounded-full">
-                        <!-- <div class="absolute top-[50%]  w-full line"> -->
-                            <div class="w-[1.1vw] h-[1.1vw] absolute top-[50%] left-[50%] bg-zinc-100 rounded-full">
-
-                            </div>
-                        <!-- </div> -->
-                    </div>
-                </div>
-            </div>
+          <div class="flex-1">
+            <img
+              src="https://ochi.design/wp-content/uploads/2022/05/Homepage-Photo-663x469.jpg"
+              alt="image"
+              class="w-full h-full object-cover rounded-3xl"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
-
+      <!-- Eyes -->
+      <section class="h-screen h">
+        <div
+          class="flex gap-14 items-center justify-center bg-cover bg-center w-full h-full bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-1440x921.jpg')]"
+        >
+          <div
+            class="w-full max-w-[34rem] h-full flex items-center justify-center gap-10"
+          >
+            <svg
+              class="overflow-visible flex-grow h-auto"
+              data-eye="left"
+              width="100"
+              height="101"
+              viewBox="0 0 200 201"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="100" cy="100" r="100" fill="#F4F4F4"></circle>
+              <g
+                class="eyes-svg__group origin-center"
+                data-svg-origin="100 100"
+                transform="matrix(-0.31985,0.94747,-0.94747,-0.31985,246.1319,43.787)"
+                style="transform-origin: 0px 0px"
+              >
+                <circle cx="100" cy="100" r="60" fill="#212121"></circle>
+                <circle
+                  cx="100"
+                  cy="50"
+                  r="8"
+                  fill="#F4F4F4"
+                  class="inner"
+                ></circle>
+              </g>
+              <text
+                class="uppercase"
+                x="100"
+                y="105"
+                text-anchor="middle"
+                fill="#F4F4F4"
+              >
+                play
+              </text>
+            </svg>
+            <svg
+              class="overflow-visible flex-grow h-auto"
+              data-eye="right"
+              width="100"
+              height="101"
+              viewBox="0 0 200 201"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="100" cy="100" r="100" fill="#F4F4F4"></circle>
+              <g
+                class="eyes-svg__group origin-center"
+                data-svg-origin="100 100"
+                transform="matrix(-0.46655,0.88449,-0.88449,-0.46655,247.8041,64.905)"
+                style="transform-origin: 0px 0px"
+              >
+                <circle cx="100" cy="100" r="60" fill="#212121"></circle>
+                <circle cx="100" cy="50" r="8" fill="#F4F4F4"></circle>
+              </g>
+              <text
+                class="uppercase"
+                x="100"
+                y="105"
+                text-anchor="middle"
+                fill="#F4F4F4"
+              >
+                play
+              </text>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <script src="./index.js"></script>
-</body>
-
+  </body>
 </html>

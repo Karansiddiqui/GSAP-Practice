@@ -1,25 +1,39 @@
-// window.addEventListener("mousemove", (e) => {
-//   const eyes = document.querySelectorAll(".line");
-//   const eyeBalls = document.querySelectorAll(".eyeBall");
+document.addEventListener("mousemove", (event) => {
+  const eyes = document.querySelectorAll(".eyes-svg__group");
+  const bounds = document.querySelector(".h").getBoundingClientRect();
+  const mouseX = event.clientX - bounds.left; // Mouse X relative to the section
+  const mouseY = event.clientY - bounds.top; // Mouse Y relative to the section
 
-//   let mouseX = e.clientX;
-//   let mouseY = e.clientY;
+  eyes.forEach((eye) => {
+    const eyeBounds = eye.getBoundingClientRect();
+    const eyeCenterX = eyeBounds.left + eyeBounds.width / 2;
+    const eyeCenterY = eyeBounds.top + eyeBounds.height / 2;
 
-//   let deltaX = mouseX - window.innerWidth / 2;
-//   let deltaY = mouseY - window.innerHeight / 2;
+    const angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
 
-//   let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+    // console.log(angle * (180 / Math.PI));
 
-//   //   eyes.forEach((eye) => {
-//   //     eye.style.transform = `rotate(${angle - 180}deg)`;
-//   //   });
+    const distance = Math.min(
+      30,
+      Math.hypot(mouseX - eyeCenterX, mouseY - eyeCenterY)
+    ); // Limit movement radius
 
-//   let eyeBallX = (mouseX * 100) / window.innerWidth - 50;
-//   let eyeBallY = (mouseY * 100) / window.innerHeight - 50;
+    const offsetX = distance * Math.cos(angle);
+    const offsetY = distance * Math.sin(angle);
 
-//   eyeBalls.forEach((eyeBall) => {
-//     eyeBall.style.transform = ` translate(${eyeBallX}%, ${eyeBallY}%)`;
-//     // eyeBall.style.transition = "all 0.1s ease-in-out";
-//     // eyeBall.style.transform = `rotate(${angle - 180}deg)`;
-//   });
-// });
+    // Move the entire eye group
+    eye.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    eye.style.transition = "all 0.35s cubic-bezier(.3,.86,.36,.95)";
+
+    // Move the inner circle within the group
+    const outerRadius = 50;
+
+    // Move the inner circle to the edge of the outer circle
+    const innerOffsetX = outerRadius * Math.cos(angle);
+    const innerOffsetY = outerRadius * Math.sin(angle);
+
+    const innerCircle = eye.querySelector("circle:nth-child(2)"); // Target the small circle
+    innerCircle.setAttribute("cx", 100 + innerOffsetX); // Adjust the center X
+    innerCircle.setAttribute("cy", 100 + innerOffsetY); // Adjust the center Y
+  });
+});
