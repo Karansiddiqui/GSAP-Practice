@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Returns Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator-container">
+        <div class="calculator-wrapper">
+
+            <div class="calculator-header">
+                <span class="tag">Calculator</span>
+                <h1>Estimate Your Investment Returns</h1>
+                <p>Our interactive ROI Calculator helps you quickly evaluate the potential returns on your investments.
+                </p>
+            </div>
+
+            <form>
+
+                <!-- Input Grid -->
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label><span>Current Monthly Revenue ($)</span></label>
+                        <input required type="number" name="current-monthly-revenue" placeholder="$50,000">
+                    </div>
+    
+                    <div class="input-group">
+                        <label><span>Clawback Costs ($)</span></label>
+                        <input required type="number" name="clawback-costs" placeholder="$10,000">
+                    </div>
+    
+                    <div class="input-group">
+                        <label><span>Uncollected Revenue ($)</span></label>
+                        <input required type="number" name="uncollected-revenue" placeholder="$15,000">
+                    </div>
+    
+                    <div class="input-group">
+                        <label><span>Operating Costs ($)</span></label>
+                        <input required type="number" name="operating-costs" placeholder="$30,000">
+                    </div>
+                </div>
+    
+                <div class="select-group">
+                    <label><span>Select MGMTRX Tier</span></label>
+                    <div class="custom-select">
+                        <div class="select-selected">
+                            <span>1</span>
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="#6b47eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="select-items">
+                            <div value="1">1</div>
+                            <div value="2">2</div>
+                            <div value="3">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -->
+    
+                <button type="submit" class="calculate-btn"><span>Calculate Your ROI</span></button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="comparison-container">
+        <div class="comparison-wrapper">
+            <h2>Impact of MGMTRX: A Visual Comparison</h2>
+
+            <div class="comparison-grid">
+                <div class="comparison-1 comparison">
+                    <h3>Before MGMTRX</h3>
+                    <div class="comparison-column-1">
+
+                        <div class="metric-group">
+                            <div class="metric-title">Projected revenue growth</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                                <span class="value">$450</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Savings from clawbacks</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 53%"></div>
+                                <span class="value">$400</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Revenue recovered from collections</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 67%"></div>
+                                <span class="value">$500</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Net profit increase</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                                <span class="value">$750</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">ROI percentage</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 35%"></div>
+                                <span class="value">35%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Payback period (in months)</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                                <span class="value">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="comparison-2 comparison">
+                    <h3>With MGMTRX</h3>
+
+                    <div class="comparison-column-2 ">
+
+                        <div class="metric-group">
+                            <div class="metric-title">Projected revenue growth</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                                <span class="value">$450</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Savings from clawbacks</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 53%"></div>
+                                <span class="value">$400</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Revenue recovered from collections</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 67%"></div>
+                                <span class="value">$500</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Net profit increase</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 47%"></div>
+                                <span class="value">$350</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">ROI percentage</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 15%"></div>
+                                <span class="value">15%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-group">
+                            <div class="metric-title">Payback period (in months)</div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                                <span class="value">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        <div class="card clicked">
+            <h2>How MGMTRX Works</h2>
+        </div>
+        <div class="card">
+            <h2>How MGMTRX Works</h2>
+        </div>
+        <div class="card">
+            <h2>How MGMTRX Works</h2>
+        </div>
+    </div>
+
+
+    <div class="card-play">
+        <button class="card">
+            <span>Calculate Your ROI</span>
+        </button>
+
+
+        <h1 class="text-gradient">Tier 01</h1>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

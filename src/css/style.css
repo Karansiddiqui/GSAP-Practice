@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Founders Grotesk;
+  src: url(../fonts/FoundersGrotesk-Semibold.ttf);
+}
+
+@font-face {
+  font-family: Neue Montreal;
+  src: url(../fonts/NeueMontreal-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: #fff;
+}
+
+.container-padding-x {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.container-padding-y {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* .animate-marquee {
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
