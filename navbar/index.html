@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        background: #333;
+        padding: 1rem 2rem;
+        position: relative;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links > div {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #00ff88;
+      }
+
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .menu-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .menu-btn {
+          display: block;
+          z-index: 100;
+        }
+
+        .nav-links {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 100%;
+          background: #333;
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.3s linear;
+        }
+
+        .nav-links > div {
+          overflow: hidden;
+          gap: 0;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links a {
+          padding: 0.8rem 2rem;
+          width: 100%;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          transition: transform 0.3s ease, background-color 0.2s ease;
+        }
+
+        .nav-links a:last-child {
+          border-bottom: none;
+        }
+
+        .nav-links a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links.active {
+          grid-template-rows: 1fr;
+        }
+
+        .nav-links.active a {
+          transform: translateY(0);
+        }
+
+        .menu-btn.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .menu-btn.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">Logo</div>
+        <button class="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+      });
+
+      // Close menu when clicking on a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
